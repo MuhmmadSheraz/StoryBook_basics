@@ -5,17 +5,26 @@ const MyButton = ({
   onclick,
   className,
   customColor,
+  buttonTextColor,
 }: {
   value: string;
   style: {};
   className: string;
   customColor: string;
+  buttonTextColor: string;
   onclick: () => void;
 }) => {
   return (
-    <button className={className} style={style} onClick={onclick}>
-      {value}
-    </button>
+    <div style={{ backgroundColor: customColor, height: "50px" }}>
+      <button
+        className={className}
+        style={{ color: buttonTextColor }} //===>here style = color:custom Style(Only Color)
+        // style={style}//===>here style = custom Style( Full)
+        onClick={onclick}
+      >
+        {value}
+      </button>
+    </div>
   );
 };
 
